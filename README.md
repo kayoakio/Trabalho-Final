@@ -1,6 +1,4 @@
-Trabalho Final
-
-Trabalho Apresentado na Conclusão da Disciplina
+Trabalho Apresentado na Conclusão da Disciplina - Engenharia de Software II
 
 Desenvolvedores:    Deise Santana
                                 Eike Stálei
