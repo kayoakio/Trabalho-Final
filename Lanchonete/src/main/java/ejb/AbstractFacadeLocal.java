@@ -36,7 +36,7 @@ public abstract class AbstractFacadeLocal<T> {
         return getEntityManager().createQuery(cq).getResultList();
     }
 
-    public Integer contador() {
+    public Integer count() {
         CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         javax.persistence.criteria.Root<T> rt = cq.from(entityClass);
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));

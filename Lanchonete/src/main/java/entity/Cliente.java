@@ -5,87 +5,90 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Cliente implements Serializable {
-    
+
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
-    
+
     //Atributos
     @Id
+    @NotNull
     private String cpf;
+    
     private String nome;
     private String endereco;
-    private Date nascimento;
+    private String nascimento; 
     private String telefone;
     private Float creditos;
     private String curso;
-    
+
     //Gets 
-    public Date getData(){
+    public Date getData() {
         return data;
     }
-    
-    public String getCpf(){
+
+    public String getCpf() {
         return cpf;
     }
-    
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    
-    public String getEndereco(){
+
+    public String getEndereco() {
         return endereco;
     }
-    
-    public Date getNascimento(){
+
+    public String getNascimento() {
         return nascimento;
     }
-    
-    public String getTelefone(){
+
+    public String getTelefone() {
         return telefone;
     }
-    
-    public Float getCreditos(){
+
+    public Float getCreditos() {
         return creditos;
     }
-    
-    public String getCurso(){
+
+    public String getCurso() {
         return curso;
     }
-    
+
     //Sets  
-    public void setData(Date data){
+    public void setData(Date data) {
         this.data = data;
     }
-    
-    public void setCpf(String cpf){
+
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
-    public void setNome(String nome){
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public void setEndereco(String endereco){
+
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-        
-    public void setNascimento(Date nascimento){
+
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
-    
-    public void setTelefone(String telefone){
+
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    public void setCreditos(Float creditos){
+
+    public void setCreditos(Float creditos) {
         this.creditos = creditos;
     }
-    
-    public void setCurso(String curso){
+
+    public void setCurso(String curso) {
         this.curso = curso;
-    }  
-    
+    }
+
 }

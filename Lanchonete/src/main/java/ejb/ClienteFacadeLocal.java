@@ -12,6 +12,6 @@ public interface ClienteFacadeLocal {
    public void excluir (Cliente cliente);
    public Cliente procurar (Object cpf);
    public List<Cliente> procurarTodos();
-   public Integer contador();
+   public Integer count();
     
 }

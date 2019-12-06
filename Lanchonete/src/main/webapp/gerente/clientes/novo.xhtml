@@ -3,8 +3,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
         <title>Novo Cliente</title>
@@ -12,17 +12,20 @@
 
     <h:body>
         <h:form>
-            <br/> CPF: <h:inputText value="#{clienteBean.cliente.cpf}"/>
+            <br/> CPF: <h:inputText value="#{clienteBean.cliente.cpf}" required="true"/>
             <br/> Nome: <h:inputText value="#{clienteBean.cliente.nome}"/>
             <br/> Endereço: <h:inputText value="#{clienteBean.cliente.endereco}"/>
             <br/> Nascimento: <h:inputText value="#{clienteBean.cliente.nascimento}"/>
             <br/> Telefone: <h:inputText value="#{clienteBean.cliente.telefone}"/>
-            <br/> Créditos: <h:inputText value="#{clienteBean.cliente.creditos}"/>
+            <br/> Créditos: <h:inputText value="#{clienteBean.cliente.creditos}">
+                                <f:passThroughAttribute name="placeholder" value="0,00" />
+                                <f:convertNumber type="number"
+                                     maxIntegerDigits="5"
+                                     maxFractionDigits="2"/>
+                            </h:inputText>
             <br/> Curso: <h:inputText value="#{clienteBean.cliente.curso}"/>
-
-            <p:commandButton actionListener="#{clienteBean.criarCliente()}"
-                             action="/gerente/index?faces-redirect=true" 
-                             value="Salvar"/>
+            <br/> 
+            <p:commandButton action="#{clienteBean.criarCliente()}" value="Salvar"/>
         </h:form>
     </h:body>
 

@@ -15,12 +15,13 @@ public class ClienteBean implements Serializable {
 
     @EJB
     private ClienteFacadeLocal clienteEJB;
+    
     private Cliente cliente;
     private Cliente clienteSelecionado;
 
     @PostConstruct
     public void init() {
-        this.cliente = new Cliente();
+        cliente = new Cliente();
     }
 
     //Gets
@@ -52,9 +53,10 @@ public class ClienteBean implements Serializable {
         cliente.setCurso(null);
     }
     
-    public void criarCliente() {
+    public String criarCliente() {
         clienteEJB.criar(cliente);
         clear();
+        return "/gerente/index?faces-redirect=true";
     }
 
     public void editarCliente() {
