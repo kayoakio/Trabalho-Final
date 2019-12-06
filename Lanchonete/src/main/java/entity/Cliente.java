@@ -4,10 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 @Entity
 public class Cliente implements Serializable {
     
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date data;
     
     //Atributos
@@ -15,7 +17,7 @@ public class Cliente implements Serializable {
     private String cpf;
     private String nome;
     private String endereco;
-    private String nascimento;
+    private Date nascimento;
     private String telefone;
     private Float creditos;
     private String curso;
@@ -25,7 +27,7 @@ public class Cliente implements Serializable {
         return data;
     }
     
-    public String getCPF(){
+    public String getCpf(){
         return cpf;
     }
     
@@ -37,7 +39,7 @@ public class Cliente implements Serializable {
         return endereco;
     }
     
-    public String getNascimento(){
+    public Date getNascimento(){
         return nascimento;
     }
     
@@ -58,7 +60,7 @@ public class Cliente implements Serializable {
         this.data = data;
     }
     
-    public void setCPF(String cpf){
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
     
@@ -70,7 +72,7 @@ public class Cliente implements Serializable {
         this.endereco = endereco;
     }
         
-    public void setNascimento(String nascimento){
+    public void setNascimento(Date nascimento){
         this.nascimento = nascimento;
     }
     

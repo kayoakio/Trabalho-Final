@@ -2,12 +2,15 @@ package bean;
 
 import ejb.ClienteFacadeLocal;
 import entity.Cliente;
-
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
+@Named
+@SessionScoped
 public class ClienteBean implements Serializable {
 
     @EJB
@@ -17,7 +20,7 @@ public class ClienteBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        cliente = new Cliente();
+        this.cliente = new Cliente();
     }
 
     //Gets
@@ -40,7 +43,7 @@ public class ClienteBean implements Serializable {
 
     //Métodos
     public void clear(){
-        cliente.setCPF(null);
+        cliente.setCpf(null);
         cliente.setNome(null);
         cliente.setEndereco(null);
         cliente.setNascimento(null);
@@ -49,25 +52,22 @@ public class ClienteBean implements Serializable {
         cliente.setCurso(null);
     }
     
-    public String criarCliente() {
+    public void criarCliente() {
         clienteEJB.criar(cliente);
         clear();
-        return "index.xhtml?faces-redirect=true";
     }
 
-    public String editarCliente() {
+    public void editarCliente() {
         clienteEJB.editar(clienteSelecionado);
         clear();
-        return "index.xhtml?faces-redirect=true";
     }
 
-    public String excluirCliente() {
+    public void excluirCliente() {
         clienteEJB.excluir(clienteSelecionado);
         clear();
-        return "index.xhtml?faces-redirect=true";
     }
     
-    public List<Cliente> procurarTodos(){
+    public List<Cliente> procurarTodosClientes(){
         return clienteEJB.procurarTodos();
     }
 

@@ -20,7 +20,7 @@
             <br/> Créditos: <h:inputText value="#{clienteBean.cliente.creditos}"/>
             <br/> Curso: <h:inputText value="#{clienteBean.cliente.curso}"/>
 
-            <p:commandButton actionListener="#{clienteBean.criarCliente()}" 
+            <p:commandButton actionListener="#{clienteBean.criarCliente()}"
                              action="/gerente/index?faces-redirect=true" 
                              value="Salvar"/>
         </h:form>
