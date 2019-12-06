@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Novo Cliente</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <br/> CPF: <h:inputText value="#{clienteBean.cliente.cpf}"/>
+            <br/> Nome: <h:inputText value="#{clienteBean.cliente.nome}"/>
+            <br/> Endereço: <h:inputText value="#{clienteBean.cliente.endereco}"/>
+            <br/> Nascimento: <h:inputText value="#{clienteBean.cliente.nascimento}"/>
+            <br/> Telefone: <h:inputText value="#{clienteBean.cliente.telefone}"/>
+            <br/> Créditos: <h:inputText value="#{clienteBean.cliente.creditos}"/>
+            <br/> Curso: <h:inputText value="#{clienteBean.cliente.curso}"/>
+
+            <p:commandButton actionListener="#{clienteBean.criarCliente()}" 
+                             action="/gerente/index?faces-redirect=true" 
+                             value="Salvar"/>
+        </h:form>
+    </h:body>
+
+</html>
